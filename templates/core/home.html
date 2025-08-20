@@ -1,0 +1,163 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Home - University Module Registration System{% endblock %}
+
+{% block content %}
+<!-- Section 1: Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="fade-in-up">Welcome to University Portal</h1>
+                <p class="lead fade-in-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <div class="fade-in-up">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'students:dashboard' %}" class="btn btn-light btn-lg me-3">
+                            <i class="fas fa-tachometer-alt me-2"></i>Go to Dashboard
+                        </a>
+                        <a href="{% url 'modules:list' %}" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-book me-2"></i>Browse Modules
+                        </a>
+                    {% else %}
+                        <a href="{% url 'students:register' %}" class="btn btn-light btn-lg me-3">
+                            <i class="fas fa-user-plus me-2"></i>Get Started
+                        </a>
+                        <a href="{% url 'modules:list' %}" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-book me-2"></i>Browse Modules
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="https://images.unsplash.com/20/cambridge.JPG?q=80&w=1147&auto=format&fit=crop" alt="University Portal" class="img-fluid rounded shadow-lg fade-in-up">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 2: Stats Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="stat-item fade-in-up">
+                    <span class="stat-number count-up" data-count="{{ total_modules }}">0</span>
+                    <span class="stat-label">Available Modules</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-item fade-in-up">
+                    <span class="stat-number count-up" data-count="{{ total_students }}">0</span>
+                    <span class="stat-label">Registered Students</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-item fade-in-up">
+                    <span class="stat-number count-up" data-count="{{ total_registrations }}">0</span>
+                    <span class="stat-label">Module Registrations</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-item fade-in-up">
+                    <span class="stat-number count-up" data-count="100">0</span>
+                    <span class="stat-label">Success Rate %</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 3: Services Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2 class="fade-in-up">Our Services</h2>
+                <p class="lead text-muted fade-in-up">Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 fade-in-up">
+                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=200&fit=crop&crop=center" class="card-img-top" alt="Service 1">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h5 class="card-title">Module Management</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 fade-in-up">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&h=200&fit=crop&crop=center" class="card-img-top" alt="Service 2">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h5 class="card-title">Cloud Reliability</h5>
+                        <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 fade-in-up">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop&crop=center" class="card-img-top" alt="Service 3">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h5 class="card-title">Student Experience</h5>
+                        <p class="card-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 4: Why Choose Us Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="fade-in-up">Why Choose Our Platform?</h2>
+                <div class="fade-in-up">
+                    <div class="d-flex mb-3">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-check-circle text-success fs-4"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5>Secure & Reliable</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-check-circle text-success fs-4"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5>User-Friendly Interface</h5>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-check-circle text-success fs-4"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5>Real-time Updates</h5>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=450&h=350&fit=crop&crop=center" alt="Why Choose Us" class="img-fluid rounded shadow-lg fade-in-up">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
