@@ -101,11 +101,11 @@ WSGI_APPLICATION = 'module_registration.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql_backend',  # Use our custom backend for MariaDB 10.4.32
+        'ENGINE': 'django.db.backends.mysql',  # Use our custom backend for MariaDB 10.4.32
         'NAME': 'universityportal',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'USER': 'c4064024',
+        'PASSWORD': 'rB9--fD42//Y', 
+        'HOST': 'c404024.mysql.database.azure.com',
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
