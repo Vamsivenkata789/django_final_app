@@ -41,9 +41,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-# Add CSRF trusted origins for Azure sites
-CSRF_TRUSTED_ORIGINS = ['https://universityportal-f9g4bbf4cdemdfgj.uksouth-01.azurewebsites.net/']
-
 
 # Application definition
 
