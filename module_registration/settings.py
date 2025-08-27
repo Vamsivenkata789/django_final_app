@@ -106,7 +106,7 @@ WSGI_APPLICATION = 'module_registration.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # Use our custom backend for MariaDB 10.4.32
-        'NAME': 'c404024',
+        'NAME': 'c4064024',
         'USER': 'c4064024',
         'PASSWORD': 'rB9--fD42//Y', 
         'HOST': 'c404024.mysql.database.azure.com',
@@ -224,4 +224,5 @@ MESSAGE_TAGS = {
     messages.WARNING: 'warning',
     messages.ERROR: 'danger',
 }
+
 
