@@ -38,8 +38,6 @@ SECRET_KEY = 'django-insecure-o*nx%7to!eky=jqxrssw#*8p*tmkifb8qu2!n6z%$5d_a!=mg9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -108,7 +106,7 @@ WSGI_APPLICATION = 'module_registration.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # Use our custom backend for MariaDB 10.4.32
-        'NAME': 'universityportal',
+        'NAME': 'c404024-db',
         'USER': 'c4064024',
         'PASSWORD': 'rB9--fD42//Y', 
         'HOST': 'c404024.mysql.database.azure.com',
