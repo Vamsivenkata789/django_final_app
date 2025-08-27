@@ -38,7 +38,13 @@ SECRET_KEY = 'django-insecure-o*nx%7to!eky=jqxrssw#*8p*tmkifb8qu2!n6z%$5d_a!=mg9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = ["*"]
+
+# Add CSRF trusted origins for Azure sites
+CSRF_TRUSTED_ORIGINS = ['https://universityportal-f9g4bbf4cdemdfgj.uksouth-01.azurewebsites.net/']
 
 
 # Application definition
