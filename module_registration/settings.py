@@ -223,3 +223,35 @@ MESSAGE_TAGS = {
 }
 
 
+# Messages Framework Settings
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.DEBUG: 'debug',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.ERROR: 'danger',
+}
+
+->
+
+# Messages Framework Settings
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.DEBUG: 'debug',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.ERROR: 'danger',
+}
+
+# CSRF Settings - Disable CSRF protection completely
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_HTTPONLY = False
+CSRF_TRUSTED_ORIGINS = [
+    'https://universityportal-f9g4bbf4cdemdfgj.uksouth-01.azurewebsites.net',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+]
+CSRF_USE_SESSIONS = False
+CSRF_COOKIE_NAME = None
