@@ -59,13 +59,11 @@ function resendCode() {
         alert('Please enter your email address first.');
         return;
     }
-    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
     const messageDiv = document.getElementById('resend-message');
     messageDiv.innerHTML = '<span class="text-info">Sending...</span>';
     fetch(window.location.pathname, {
         method: 'POST',
         headers: {
-            'X-CSRFToken': csrfToken,
             'X-Requested-With': 'XMLHttpRequest',
             'Content-Type': 'application/x-www-form-urlencoded',
         },

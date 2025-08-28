@@ -10,6 +10,8 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.urls import reverse_lazy
 from django.utils import timezone
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 from .models import Student, EmailVerification, PasswordResetOTP
 from modules.models import Module, Registration
 import json
@@ -153,6 +155,7 @@ University Registration Team
             raise Exception("Failed to send verification email")
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class StudentLoginView(LoginView):
     """Student login view"""
     template_name = 'students/login.html'
@@ -181,6 +184,7 @@ class StudentLoginView(LoginView):
         return super().form_valid(form)
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class StudentLogoutView(LogoutView):
     """Student logout view"""
     next_page = reverse_lazy('core:home')

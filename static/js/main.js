@@ -73,9 +73,7 @@ function setupModuleRegistration() {
         $.ajax({
             url: url,
             type: 'POST',
-            data: {
-                'csrfmiddlewaretoken': $('[name=csrfmiddlewaretoken]').val()
-            },
+            data: {},
             success: function(response) {
                 if (response.success) {
                     showAlert('success', response.message);
@@ -111,9 +109,7 @@ function setupModuleRegistration() {
         $.ajax({
             url: url,
             type: 'POST',
-            data: {
-                'csrfmiddlewaretoken': $('[name=csrfmiddlewaretoken]').val()
-            },
+            data: {},
             success: function(response) {
                 if (response.success) {
                     showAlert('success', response.message);
@@ -301,9 +297,7 @@ function registerModule(moduleCode, url) {
     $.ajax({
         url: url,
         type: 'POST',
-        data: {
-            'csrfmiddlewaretoken': $('[name=csrfmiddlewaretoken]').val()
-        },
+        data: {},
         success: function(response) {
             if (response.success) {
                 showAlert('success', response.message);
@@ -326,9 +320,7 @@ function unregisterModule(moduleCode, url) {
     $.ajax({
         url: url,
         type: 'POST',
-        data: {
-            'csrfmiddlewaretoken': $('[name=csrfmiddlewaretoken]').val()
-        },
+        data: {},
         success: function(response) {
             if (response.success) {
                 showAlert('success', response.message);
