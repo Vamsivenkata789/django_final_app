@@ -222,34 +222,25 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
-
-# Messages Framework Settings
-from django.contrib.messages import constants as messages
-MESSAGE_TAGS = {
-    messages.DEBUG: 'debug',
-    messages.INFO: 'info',
-    messages.SUCCESS: 'success',
-    messages.WARNING: 'warning',
-    messages.ERROR: 'danger',
-}
-
-# Messages Framework Settings
-from django.contrib.messages import constants as messages
-MESSAGE_TAGS = {
-    messages.DEBUG: 'debug',
-    messages.INFO: 'info',
-    messages.SUCCESS: 'success',
-    messages.WARNING: 'warning',
-    messages.ERROR: 'danger',
-}
-
-# CSRF Settings - Disable CSRF protection completely
+# CSRF Settings - Disable CSRF protection
 CSRF_COOKIE_SECURE = False
 CSRF_COOKIE_HTTPONLY = False
+CSRF_USE_SESSIONS = False
 CSRF_TRUSTED_ORIGINS = [
     'https://universityportal-f9g4bbf4cdemdfgj.uksouth-01.azurewebsites.net',
     'http://localhost:8000',
     'http://127.0.0.1:8000',
 ]
-CSRF_USE_SESSIONS = False
-CSRF_COOKIE_NAME = None
+
+# Custom CSRF bypass middleware
+class CSRFBypassMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        # Disable CSRF for all requests
+        request._dont_enforce_csrf_checks = True
+        return self.get_response(request)
+
+# Add the custom middleware to the beginning of the middleware list
+MIDDLEWARE.insert(0, 'module_registration.settings.CSRFBypassMiddleware')

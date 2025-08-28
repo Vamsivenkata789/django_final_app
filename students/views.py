@@ -160,6 +160,11 @@ class StudentLoginView(LoginView):
     """Student login view"""
     template_name = 'students/login.html'
     redirect_authenticated_user = True
+    
+    def dispatch(self, request, *args, **kwargs):
+        # Completely disable CSRF for this view
+        request._dont_enforce_csrf_checks = True
+        return super().dispatch(request, *args, **kwargs)
 
     def get_success_url(self):
         return reverse_lazy('students:dashboard')
